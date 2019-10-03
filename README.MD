@@ -31,7 +31,7 @@ The highest bidder wins but the price paid is the second-highest bid.
 https://en.wikipedia.org/wiki/Vickrey_auction
 
 ## Unit tests
-There is a Unit test which test some other examples in the folder:
+There is a Unit test which tests some other examples in the folder:
  
  `src/test/kotlin/com/teads/auction/algorithm`
 
