@@ -14,8 +14,9 @@ import io.kotlintest.specs.ShouldSpec
 * Unit Tests of the Auction Algorithm.
 */
 class VickreyAuctionAlgorithmTest : ShouldSpec({
+    val sonyDiscman = Product("Sony D-555", 100)
+
     should("the winner be the buyer E with a price of 130 given the Example of the development Test") {
-        val sonyDiscman = Product("Sony D-555", 100)
         val item = AuctionItem(sonyDiscman, mutableListOf())
         val buyerA = Buyer("A")
         val buyerB = Buyer("B")
@@ -39,7 +40,6 @@ class VickreyAuctionAlgorithmTest : ShouldSpec({
     }
 
     should("the winner be the one who placed the Bid given a unique Bid exceeding the reserve price") {
-        val sonyDiscman = Product("Sony D-555", 100)
         val item = AuctionItem(sonyDiscman, mutableListOf())
         val buyerA = Buyer("A")
 
@@ -55,7 +55,6 @@ class VickreyAuctionAlgorithmTest : ShouldSpec({
     }
 
     should("be no winner given a unique Bid below the reserve price") {
-        val sonyDiscman = Product("Sony D-555", 100)
         val item = AuctionItem(sonyDiscman, mutableListOf())
         val buyerA = Buyer("A")
 
@@ -67,8 +66,7 @@ class VickreyAuctionAlgorithmTest : ShouldSpec({
         }
     }
 
-    should("be the first buyer who place the highest bid in case of equality") {
-        val sonyDiscman = Product("Sony D-555", 100)
+    should("be the first buyer who places the highest bid as the winner in case of equality") {
         val item = AuctionItem(sonyDiscman, mutableListOf())
         val buyerA = Buyer("A")
         val buyerB = Buyer("B")
