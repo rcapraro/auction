@@ -30,7 +30,7 @@ class VickreyAuctionAlgorithmTest : ShouldSpec({
         item.placeBid(buyerD, 105, 115, 90)
         item.placeBid(buyerE, 132, 135, 140)
 
-        val auctionResult = VickreyAuctionAlgorithm().determineWinners(item)
+        val auctionResult = VickreyAuctionAlgorithm().determineWinner(item)
 
         auctionResult shouldNotBe null
         auctionResult.bid shouldNotBe null
@@ -45,7 +45,7 @@ class VickreyAuctionAlgorithmTest : ShouldSpec({
 
         item.placeBid(buyerA, 110, 130)
 
-        val auctionResult = VickreyAuctionAlgorithm().determineWinners(item)
+        val auctionResult = VickreyAuctionAlgorithm().determineWinner(item)
 
         auctionResult shouldNotBe null
         auctionResult.bid shouldNotBe null
@@ -62,7 +62,7 @@ class VickreyAuctionAlgorithmTest : ShouldSpec({
 
         shouldThrow<AuctionException> {
             //An exception is thrown because there is no Bid exceeding the reserve price
-            VickreyAuctionAlgorithm().determineWinners(item)
+            VickreyAuctionAlgorithm().determineWinner(item)
         }
     }
 
@@ -80,7 +80,7 @@ class VickreyAuctionAlgorithmTest : ShouldSpec({
         item.placeBid(buyerD, 105, 115, 140)
         item.placeBid(buyerE, 132, 135, 140)
 
-        val auctionResult = VickreyAuctionAlgorithm().determineWinners(item)
+        val auctionResult = VickreyAuctionAlgorithm().determineWinner(item)
 
         auctionResult shouldNotBe null
         auctionResult.bid shouldNotBe null

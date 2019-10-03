@@ -14,15 +14,15 @@ import com.teads.auction.model.AuctionResult
  * @see <a href="https://en.wikipedia.org/wiki/Vickrey_auction">Vickrey Auction</a>
  */
 class VickreyAuctionAlgorithm : AuctionAlgorithm {
-    override fun determineWinners(item: AuctionItem): AuctionResult {
+    override fun determineWinner(item: AuctionItem): AuctionResult {
 
         // Filter bids below reserve price
         val effectiveBids = item.bids
             .filter { it.price > item.product.reservePrice }
 
-        val highestBid = (effectiveBids
+        val highestBid = effectiveBids
             .maxBy { it.price }
-            ?: throw AuctionException("There are no valid Bids to process !"))
+            ?: throw AuctionException("There are no valid Bids to process !")
 
         val secondHighestBid = effectiveBids
             .filter { it.buyer != highestBid.buyer }

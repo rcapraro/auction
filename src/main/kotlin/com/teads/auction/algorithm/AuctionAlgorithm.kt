@@ -10,5 +10,5 @@ interface AuctionAlgorithm {
     /**
      * Determine the Result of the Auction Process.
      */
-    fun determineWinners(item: AuctionItem): AuctionResult
+    fun determineWinner(item: AuctionItem): AuctionResult
 }
